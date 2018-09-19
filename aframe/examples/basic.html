@@ -13,13 +13,8 @@
 	</div>
 
 	<!-- Define your 3d scene and enabled ar.js -->
-	<a-scene embedded arjs='trackingMethod: best;'>
-		
-		
-		<!-- handle marker with your own pattern -->
-		<a-marker-camera type='pattern' url='https://vhansemann.github.io/Ar-perso/aframe/examples/simplon.patt'>
-		<a-box position='0 0.5 0' material='color: red;'></a-box>
-		</a-marker-camera>  
+<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
 	
 
 		
@@ -27,8 +22,16 @@
 		<a-marker preset='kanji'>
 		<a-box position='0 0.5 0' material='color: green;'></a-box>
 		</a-marker>
-		<!-- it is the same as the marker below -->
-		<a-marker type='pattern' url='http://examples.org/kanji.patt'></a-marker>
+
+	
+		<!-- handle matrix marker -->
+		<a-marker type='barcode' value='5'>
+			<a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:pink;'>
+			<a-torus-knot radius='0.26' radius-tubular='0.05'>
+			<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+			</a-torus-knot>
+			</a-box>
+		</a-marker>
 
 		<!-- Create a anchor to attach your augmented reality -->
 		<a-anchor hit-testing-enabled='true'>
