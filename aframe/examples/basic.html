@@ -4,8 +4,6 @@
 <!-- include ar.js for aframe -->
 <script src='../build/aframe-ar.js'></script>
 <script>ARjs.Context.baseURL = '../../three.js/'</script>
-<!-- Ajout de aframe extra -->
-<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <!-- start the body of your page -->
 <body style='margin : 0px; overflow: hidden;'>
 	<!-- add some info at the top of the page -->
@@ -19,7 +17,7 @@
 		<!-- here is Barcode 1 -->
 		<a-marker type='barcode' value='1'>
 		<a-gltf-model src="https://rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"></a-gltf-model>
-		<a-box position= ' 0 0.9 0' material='opacity : 0.5; color : blue;'>
+		<a-box position= ' 0 0.9 0' material='opacity : 0.3; color : red;'>
 		</a-box>
 		</a-marker>
 
