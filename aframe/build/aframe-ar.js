@@ -6689,14 +6689,7 @@ ARjs.SessionDebugUI = function(arSession, tangoPointCloud){
 	//		augmented-websites
 	//////////////////////////////////////////////////////////////////////////////
 
-	if( ARjs.SessionDebugUI.AugmentedWebsiteURL ){
-		var domElement = document.createElement('a')
-		domElement.innerHTML = 'Share on augmented-websites'
-		domElement.style.display = 'block'
-		// domElement.setAttribute('target', '_blank')
-		domElement.href = ARjs.SessionDebugUI.AugmentedWebsiteURL + '?'+location.href
-		this.domElement.appendChild(domElement)						
-	}
+
 
 	//////////////////////////////////////////////////////////////////////////////
 	//		toggle-point-cloud
@@ -6769,72 +6762,24 @@ ARjs.AnchorDebugUI = function(arAnchor){
 	//		current-tracking-backend
 	//////////////////////////////////////////////////////////////////////////////
 
-	var domElement = document.createElement('span')
-	domElement.style.display = 'block'
-	this.domElement.appendChild(domElement)
-	domElement.innerHTML = '<b>markersAreaEnabled</b> :' +arAnchor.parameters.markersAreaEnabled
 
 	//////////////////////////////////////////////////////////////////////////////
 	//		toggle-marker-helper
 	//////////////////////////////////////////////////////////////////////////////
 
-	if( arAnchor.parameters.markersAreaEnabled ){
-		var domElement = document.createElement('button')
-		domElement.style.display = 'block'
-		this.domElement.appendChild(domElement)
 
-		domElement.id= 'buttonToggleMarkerHelpers'
-		domElement.innerHTML = 'toggle-marker-helper'
-		domElement.href='javascript:void(0)'
-
-		var subMarkerHelpersVisible = false
-		domElement.addEventListener('click', function(){
-			subMarkerHelpersVisible = subMarkerHelpersVisible ? false : true
-			arAnchor.markersArea.setSubMarkersVisibility(subMarkerHelpersVisible)		
-		})
-	}
 	
 	//////////////////////////////////////////////////////////////////////////////
 	//		Learn-new-marker-area
 	//////////////////////////////////////////////////////////////////////////////
 
-	if( arAnchor.parameters.markersAreaEnabled ){
-		var domElement = document.createElement('button')
-		domElement.style.display = 'block'
-		this.domElement.appendChild(domElement)
 
-		domElement.id = 'buttonMarkersAreaLearner'
-		domElement.innerHTML = 'Learn-new-marker-area'
-		domElement.href ='javascript:void(0)'
-
-		domElement.addEventListener('click', function(){
-			if( ARjs.AnchorDebugUI.MarkersAreaLearnerURL !== null ){
-				var learnerURL = ARjs.AnchorDebugUI.MarkersAreaLearnerURL
-			}else{
-				var learnerURL = ARjs.Context.baseURL + 'examples/multi-markers/examples/learner.html'
-			}
-			ARjs.MarkersAreaUtils.navigateToLearnerPage(learnerURL, trackingBackend)
-		})	
-	}
 
 	//////////////////////////////////////////////////////////////////////////////
 	//		Reset-marker-area
 	//////////////////////////////////////////////////////////////////////////////
 
-	if( arAnchor.parameters.markersAreaEnabled ){
-		var domElement = document.createElement('button')
-		domElement.style.display = 'block'
-		this.domElement.appendChild(domElement)
-
-		domElement.id = 'buttonMarkersAreaReset'
-		domElement.innerHTML = 'Reset-marker-area'
-		domElement.href ='javascript:void(0)'
-
-		domElement.addEventListener('click', function(){
-			ARjs.MarkersAreaUtils.storeDefaultMultiMarkerFile(trackingBackend)
-			location.reload()
-		})
-	}
+	
 }
 
 /**
