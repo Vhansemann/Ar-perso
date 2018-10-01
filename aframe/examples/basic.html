@@ -13,17 +13,13 @@
 	<!-- Define your 3d scene and enabled ar.js -->
 <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-	<!-- Chargement de mes pbj perso -->
-	  <a-assets>
-    <a-asset-item id="trump" src="https://vhansemann.github.io/Ar-perso/aframe/examples/trump.gltf"></a-asset-item>
-  </a-assets>
 
 
 		
 		<!-- here is Barcode 1 -->
 		<a-marker type='barcode' value='1'>
-		<a-entity gltf-model="url(/path/to/tree.gltf)"></a-entity>
-		<a-box position= ' 0 0.9 0' material='opacity : 0.5; color : blue;'>
+		<a-entity gltf-model="url(https://vhansemann.github.io/Ar-perso/aframe/examples/trump.gltf)"></a-entity>
+		<a-box position= ' 0 0.9 0' material='opacity : 0.5; color : red;'>
 		</a-box>
 		</a-marker>
 
