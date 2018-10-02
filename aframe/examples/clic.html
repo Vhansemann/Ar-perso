@@ -6,23 +6,19 @@
 <script>ARjs.Context.baseURL = '../../three.js/'</script>
 <!-- start the body of your page -->
 <body style='margin : 0px; overflow: hidden;'>
-	<!-- add some info at the top of the page -->
-	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - example for a-frame
-	<br/>
-Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+
 	<!-- Define your 3d scene and enabled ar.js -->
 <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-
+		<!-- Pointeur de visée -->
+		<a-entity position="0 1.8 4">
+      		<a-camera>
+        	<a-cursor color="#4CC3D9"></a-cursor>
+      		<a-camera>
+    </a-entity>
 
 		
-		<!-- here is Barcode 10 logo simplon 
-		<a-marker type='barcode' value='10'>
-		<a-gltf-model src="https://vhansemann.github.io/Ar-perso/aframe/examples/GLTF/logo/scene.gltf" rotation="90 0 0" scale="0.02 0.02 0.02" gltf-model="https://vhansemann.github.io/Ar-perso/aframe/examples/GLTF/logo/scene.gltf" >
-		<a-animation attribute="rotation" to="360 0 0"  dur="5000" easing='linear' repeat="indefinite"></a-animation>
-		</a-gltf-model>
-		</a-marker> 
-		-->
+	
 
 	
 		<!-- handle matrix marker -->
