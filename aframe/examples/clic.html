@@ -1,33 +1,68 @@
-<!doctype HTML>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    </head>
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    
-    <!-- import events.js script -->
-    <script src="https://vhansemann.github.io/Ar-perso/aframe/examples/clic.html"></script>
-    
-    <body style='margin : 0px; overflow: hidden;'>
-        <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+<!-- include a-frame -->
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 
-        <a-assets>
-            <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item>
-        </a-assets>
+<!-- include ar.js for aframe -->
+<script src='../build/aframe-ar.js'></script>
+<script>ARjs.Context.baseURL = '../../three.js/'</script>
+<!-- start the body of your page -->
+<body style='margin : 0px; overflow: hidden;'>
+	<!-- add some info at the top of the page -->
+	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - example for a-frame
+	<br/>
+Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+	<!-- Define your 3d scene and enabled ar.js -->
+<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-        <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
-            <a-entity
-                id="animated-model"
-                gltf-model="#animated-asset"
-                scale="2">
-            </a-entity>
-        </a-marker>
 
-        <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
-        <a-entity camera></a-entity>
-        </a-scene>
-    </body>
-</html>
+
+		
+		<!-- here is Barcode 10 logo simplon 
+		<a-marker type='barcode' value='10'>
+		<a-gltf-model src="https://vhansemann.github.io/Ar-perso/aframe/examples/GLTF/logo/scene.gltf" rotation="90 0 0" scale="0.02 0.02 0.02" gltf-model="https://vhansemann.github.io/Ar-perso/aframe/examples/GLTF/logo/scene.gltf" >
+		<a-animation attribute="rotation" to="360 0 0"  dur="5000" easing='linear' repeat="indefinite"></a-animation>
+		</a-gltf-model>
+		</a-marker> 
+		-->
+
+	
+		<!-- handle matrix marker -->
+		<a-marker type='barcode' value='10'>
+		<a-image src="https://vhansemann.github.io/Ar-perso/aframe/examples/image/zombie.png" rotation="-90 0 0" scale="3 3 1.5" material="" geometry="" position="0.649151001685437 -0.06739032463205524 0.1300571588853694"></a-image></a-marker>
+	
+		<a-marker type='barcode' value='11'>
+		<a-image src="https://vhansemann.github.io/Ar-perso/aframe/examples/image/linke.png" rotation="-90 0 0" scale="1.5 1.5 1.5" material="" geometry=""></a-image>
+		</a-marker>
+	
+		<a-marker type='barcode' value='12'>
+		<a-image src="https://vhansemann.github.io/Ar-perso/aframe/examples/image/facebook.png" rotation="-90 0 0" scale="1.5 1.5 1.5" material="" geometry=""></a-image>
+		</a-marker>
+		
+		<a-marker type='barcode' value='13'>
+		<a-image src="https://vhansemann.github.io/Ar-perso/aframe/examples/image/insta.png" rotation="-90 0 0" scale="1.5 1.5 1.5" material="" geometry=""></a-image>
+		</a-marker>
+	
+		<!-- Create a anchor to attach your augmented reality -->
+		<a-anchor hit-testing-enabled='true'>
+
+			<!-- Add your augmented reality here -->
+	
+			<a-sphere position='0 0.5 0' material='opacity: 0 ; side:double; color:red;'>
+				<!-- affichage d'un texte -->
+				<a-text value="Vive, Victor!"></a-text>
+				
+				<!-- affichage d'une image  -->
+				<a-image src="http://www.pngmart.com/files/2/Chuck-Norris-PNG-HD.png"></a-image>
+
+				
+			</a-sphere> 
+
+
+
+
+		</a-anchor>
+
+		<!-- Define a static camera -->
+		<a-camera-static/>
+
+	</a-scene>
+</body>
