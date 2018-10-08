@@ -12,6 +12,7 @@ AFRAME.registerComponent('markerhandler', {
                 
                 // every click, we make our model grow in size
                 entity.setAttribute('scale', scale);
+                window.open("https://www.w3schools.com"); 
             }
         });
 }});
