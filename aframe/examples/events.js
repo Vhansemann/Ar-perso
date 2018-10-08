@@ -6,7 +6,7 @@ AFRAME.registerComponent('markerhandler', {
 
         animatedMarker.addEventListener('click', function(ev){
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
-                <meta http-equiv="refresh" content="0; URL=http://www.google.fr" />
+            window.open("https://www.w3schools.com"); 
             }
         });
 }});
