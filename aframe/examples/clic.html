@@ -16,9 +16,8 @@
 <body style='margin : 0px; overflow: hidden;'>
 
 	
-<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position'>
 
-<a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position>
 <a-assets>
 <img id="thumbMountains" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/mountains.png">
 </a-assets>		
@@ -73,6 +72,5 @@
 		<a-camera-static/>
 	 <a-entity id="leftHand" link-controls="hand: left"></a-entity>
 	 <a-entity id="rightHand" link-controls="hand: right"></a-entity>
-		</a-scene>
 	</a-scene>
 </body>
