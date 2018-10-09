@@ -1,6 +1,10 @@
 <!-- include a-frame -->
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 
+window.addEventListener('vrdisplayactivate' function (evt) {
+  /* A page can now start presenting in the headset */
+  vrDisplay.requestPresent([{ source: myCanvas }]).then(function () { ... });
+}
 <!-- include ar.js for aframe -->
 <script src='../build/aframe-ar.js'></script>
 <script>ARjs.Context.baseURL = '../../three.js/'</script>
